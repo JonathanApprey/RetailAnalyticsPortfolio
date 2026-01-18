@@ -1,70 +1,80 @@
-# 🏕️ Retail Pulse: Portfolio Project
+# 📊 Retail Pulse: Marketing Analytics Dashboard
 
-**Retail Pulse** is an end-to-end data analytics project simulating a retail environment (Camping & RV Gear). It demonstrates the full data lifecycle: generating synthetic data, building an ETL pipeline with SQLite, running SQL analysis, and visualizing KPIs in an interactive Streamlit dashboard.
+A customer analytics project analyzing a marketing campaign dataset. Features customer segmentation (RFM analysis), demographic insights, and campaign performance tracking via an interactive Streamlit dashboard.
+
+![Dashboard](screenshots/dashboard.png)
 
 ## 🚀 Features
 
--   **Data Engineering**: 
-    -   Synthetic data generation using `Faker` (Customers, Products, Transactions, Web Traffic).
-    -   ETL pipeline to clean and load data into a SQLite database.
--   **SQL Analysis**: 
-    -   Complex queries for RFM (Recency, Frequency, Monetary) segmentation.
-    -   Monthly sales aggregations and web conversion funnels.
--   **Interactive Dashboard**: 
-    -   Built with **Streamlit** and **Plotly**.
-    -   Visualizes Sales Trends, Customer Segments, and Web Traffic.
+- **Customer Segmentation**: RFM (Recency, Frequency, Monetary) analysis to identify high-value customers
+- **Demographic Analysis**: Spend patterns by education level and marital status
+- **Campaign Performance**: Conversion rate tracking across 6 marketing campaigns
+- **Interactive Dashboard**: Built with Streamlit and Plotly for data exploration
 
 ## 🛠️ Tech Stack
 
--   **Python 3.9+**
--   **Pandas & NumPy**: Data manipulation.
--   **SQLite**: Relational database.
--   **Streamlit**: Web application framework.
--   **Plotly**: Interactive visualizations.
+- **Python 3.9+**
+- **Pandas**: Data manipulation and cleaning
+- **SQLite**: Data storage and SQL queries
+- **Streamlit**: Interactive web dashboard
+- **Plotly**: Visualizations
+
+## 📂 Project Structure
+
+```
+RetailAnalyticsPortfolio/
+├── src/
+│   ├── app.py             # Streamlit Dashboard
+│   ├── db_manager.py      # Data loading and ETL
+│   └── verify_queries.py  # SQL query testing
+├── sql/
+│   ├── rfm_analysis.sql       # Customer segmentation
+│   ├── demographics.sql       # Demographic insights
+│   ├── campaign_performance.sql # Campaign metrics
+│   └── kpi_sales.sql          # Sales KPIs
+├── data/
+│   └── retail_pulse.db    # SQLite Database
+├── screenshots/
+│   └── dashboard.png      # Dashboard preview
+├── marketing_campaign.csv # Source dataset
+└── requirements.txt
+```
 
 ## 🏁 Getting Started
 
-### 1. Installation
-
-Clone the repository and install dependencies:
+### 1. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Data Generation & Setup
-
-Run the following command to generate synthetic data and populate the database:
+### 2. Load Data
 
 ```bash
-# Generate CSVs and Load into SQLite
-python3 src/data_generator.py
 python3 src/db_manager.py
 ```
 
-### 3. Run the Dashboard
-
-Launch the Streamlit app:
+### 3. Run Dashboard
 
 ```bash
 streamlit run src/app.py
 ```
 
-The app will open in your browser at `http://localhost:8501`.
+Open `http://localhost:8501` in your browser.
 
-## 📂 Project Structure
+## 📈 Dataset
 
-```
-RetailPulse/
-├── src/
-│   ├── data_generator.py  # Generates synthetic data
-│   ├── db_manager.py      # ETL: Loads CSVs to SQLite
-│   └── app.py             # Streamlit Dashboard Entry Point
-├── data/
-│   ├── raw/               # Generated CSV files
-│   └── retail_pulse.db    # SQLite Database
-├── sql/                   # SQL Scripts for Analysis
-│   ├── kpi_sales.sql
-│   └── rfm_analysis.sql
-└── requirements.txt
-```
+The project uses a marketing campaign dataset with 2,240 customers including:
+- Demographics (income, education, marital status)
+- Purchase history across 6 product categories
+- Campaign response data (6 campaigns)
+- Customer recency and purchase frequency
+
+## 📊 Dashboard Pages
+
+| Page | Description |
+|------|-------------|
+| **Executive Summary** | KPI metrics and spend by category |
+| **Customer Segmentation** | Income vs spend analysis, RFM scatter plots |
+| **Marketing Campaigns** | Conversion rates, responder profiles |
+| **Data View** | Raw data inspector |

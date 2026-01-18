@@ -5,7 +5,7 @@ import os
 import plotly.express as px
 
 # Set page config
-st.set_page_config(page_title="Retail Pulse Analytics", layout="wide", page_icon="🏕️")
+st.set_page_config(page_title="Retail Pulse Analytics", layout="wide", page_icon="📊")
 
 # Constants
 DB_PATH = os.path.join(os.path.dirname(__file__), '../data/retail_pulse.db')
@@ -27,7 +27,7 @@ def run_query(query_file):
         conn.close()
 
 # Whitelist of valid table names to prevent SQL injection
-VALID_TABLES = {'customers', 'products', 'transactions', 'web_traffic', 'marketing_data'}
+VALID_TABLES = {'marketing_data'}
 
 def load_data(table_name):
     """Loads a raw table from the database."""
@@ -39,8 +39,8 @@ def load_data(table_name):
     return df
 
 # Main App Layout
-st.title("🏕️ Retail Pulse: Analytics Dashboard")
-st.markdown("Monitor sales performance, customer segments, and web traffic conversion.")
+st.title("📊 Retail Pulse: Marketing Analytics")
+st.markdown("Customer segmentation, campaign performance, and demographic insights.")
 
 
 # Sidebar Navigation
