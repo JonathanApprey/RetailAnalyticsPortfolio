@@ -2,7 +2,15 @@
 
 A customer analytics project analyzing a marketing campaign dataset. Features customer segmentation (RFM analysis), demographic insights, and campaign performance tracking via an interactive Streamlit dashboard.
 
-![Dashboard](screenshots/dashboard.png)
+## Dashboard Screenshots
+
+| Executive Summary | Customer Segmentation |
+|:-----------------:|:---------------------:|
+| ![Executive Summary](screenshots/executive_summary.png) | ![Customer Segmentation](screenshots/customer_segmentation.png) |
+
+| Marketing Campaigns | Data View |
+|:-------------------:|:---------:|
+| ![Marketing Campaigns](screenshots/marketing_campaigns.png) | ![Data View](screenshots/data_view.png) |
 
 ## 🚀 Features
 
@@ -60,7 +68,6 @@ python3 src/db_manager.py
 streamlit run src/app.py
 ```
 
-Open `http://localhost:8501` in your browser.
 
 ## 📈 Dataset
 
